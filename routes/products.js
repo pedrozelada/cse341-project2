@@ -1,19 +1,17 @@
 const express = require('express');
 const router = express.Router();
-// const { contactValidation , contactValidationRules , validate } = require('../middleware/validation1');
+const { productValidation, handleValidation } = require('../middleware/validation');
 
+const productsController = require('../controllers/productsController');
 
+router.get('/', productsController.getAll);
 
-const usersController = require('../controllers/productsController');
+router.get('/:id', productsController.getSingle);
 
-router.get('/',   usersController.getAll);
+router.post('/', productValidation, handleValidation, productsController.createProduct);
 
-router.get('/:id',  usersController.getSingle);
+router.put('/:id', productValidation, handleValidation, productsController.updateProduct);
 
-router.post('/',   usersController.createProduct);
-
-router.put('/:id',  usersController.updateProduct);
-
-router.delete('/:id', usersController.deleteProduct);
+router.delete('/:id', productsController.deleteProduct);
 
 module.exports = router;

@@ -18,6 +18,9 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
     const productId = new ObjectId(req.params.id);
+    if (!ObjectId.isValid(productId)) {
+        return res.status(400).json({ error: 'Invalid product ID format' });
+    }
     try {
     const result = await mongodb.getDatabase().db().collection('products').find({ _id: productId}).toArray();
     if (result.length === 0) {

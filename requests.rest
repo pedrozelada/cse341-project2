@@ -4,18 +4,18 @@
 GET http://localhost:3000/products
 
 ### GET ONLY ONE 
-GET http://localhost:3000/products/674e71029804e8ac3d4a72bf
+GET http://localhost:3000/products/674e4b4df63c9c3ea101c26avb
 
 ### CREATE NEW PRODUCT
 POST http://localhost:3000/products/
 content-type: application/json
 
 {
-    "name": "Phone Xiaomi Redmi 13",
+    "name": "",
     "description": "Phone last Generation.",
     "category": "Electronics",
-    "price": 129.99,
-    "stockQuantity": 150,
+    "price": -129.99,
+    "stockQuantity": -150,
     "weight": 0.4,
     "isActive": true
 }
@@ -37,11 +37,11 @@ content-type: application/json
 
 
 
-### DELETE CONTACT 
+### DELETE Product
 DELETE http://localhost:3000/products/674e71029804e8ac3d4a72bf
 
-
-
+### DELETE Reviews by product
+GET http://localhost:3000/reviews/product/674e4b4df63c9c3ea101c26a
 
 
 

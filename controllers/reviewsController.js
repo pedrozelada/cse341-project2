@@ -17,6 +17,11 @@ const getAllReviews = async (req, res) => {
 // Get a single review by its ID
 const getReviewById = async (req, res) => {
     const reviewId = new ObjectId(req.params.id);
+
+    if (!ObjectId.isValid(productId)) {
+        return res.status(400).json({ error: 'Invalid product ID format' });
+    }
+    
     try {
         const result = await mongodb.getDatabase().db().collection('reviews').find({ _id: reviewId }).toArray();
         if (result.length === 0) {
@@ -37,7 +42,7 @@ const createReview = async (req, res) => {
         productId: req.body.productId,
         rating: req.body.rating,
         reviewText: req.body.reviewText,
-        createdAt: new Date()  // Automatically set the creation date to current date
+        createdAt: new Date()  
     };
 
     try {

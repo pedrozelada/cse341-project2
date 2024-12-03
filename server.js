@@ -3,7 +3,10 @@ const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
 
 // middleware
-// const createError = require('http-errors');
+const createError = require('http-errors');
+
+
+
 // const path = require('path');
 // const cors = require('cors');
 
@@ -19,26 +22,32 @@ app.use(bodyParser.json());
 // app.use(cors()); // middleware
 
 
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', '');
-//     res.setHeader(
-//         'Access-Control-Allow-Headers',
-//         'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
-//     );
-//     res.setHeader('Acces-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-//     next();
-// });
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+    );
+    res.setHeader('Acces-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+});
 
 app.use('/', require ('./routes'));
 
 
 // errors
+app.use((req, res,next) => {
+    next(createError(404, 'Not found'))
+});
+
 app.use((err, req, res, next) => {
-    err.statusCode = err.statusCode || 500;
-    err.message = err.message || "Internal Server Error";
-    res.status(err.statusCode).json({
-      message: err.message,
-    });
+    res.status(err.status || 500);
+    res.send({
+        error: {
+            status: err.status || 500,
+            message: err.message
+        }
+    })
 });
 
 
