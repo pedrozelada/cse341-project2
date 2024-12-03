@@ -1,0 +1,82 @@
+
+
+### GET ALL Products
+GET http://localhost:3000/products
+
+### GET ONLY ONE 
+GET http://localhost:3000/products/674e71029804e8ac3d4a72bf
+
+### CREATE NEW PRODUCT
+POST http://localhost:3000/products/
+content-type: application/json
+
+{
+    "name": "Phone Xiaomi Redmi 13",
+    "description": "Phone last Generation.",
+    "category": "Electronics",
+    "price": 129.99,
+    "stockQuantity": 150,
+    "weight": 0.4,
+    "isActive": true
+}
+
+
+### UPDATE PRODUCT
+PUT http://localhost:3000/products/674e71029804e8ac3d4a72bf
+content-type: application/json
+
+{
+    "name": "Phone Xiaomi Redmi Note 13",
+    "description": "Phone last Generation, model 2024.",
+    "category": "Electronics",
+    "price": 119.99,
+    "stockQuantity": 150,
+    "weight": 0.5,
+    "isActive": true
+}
+
+
+
+### DELETE CONTACT 
+DELETE http://localhost:3000/products/674e71029804e8ac3d4a72bf
+
+
+
+
+
+
+
+
+### GET ALL CONTACTS ON RENDER
+GET https://project1-et34.onrender.com/users
+
+
+### GET ONLY ONE ON RENDER
+GET https://project1-et34.onrender.com/users/673698ffca2d411bf1c69aa9
+
+
+
+### CREATE NEW CONTACT ON RENDER
+POST https://project1-et34.onrender.com/users/
+content-type: application/json
+
+{
+    "firstName": "Joaquin",
+    "lastName": "Tapia",
+    "email": "joaco@yahoo.com",
+    "favoriteColor": "black",
+    "birthday": "1999-05-14"
+}
+
+
+### UPDATE CONTACT ON RENDER
+PUT https://project1-et34.onrender.com/users/673940265c30bd12c1fe7300
+content-type: application/json
+
+{
+   "firstName": "Joaquin3",
+    "lastName": "Tapia3",
+    "email": "joaco3@yahoo.com",
+    "favoriteColor": "black",
+    "birthday": "1999-05-14"
+}
