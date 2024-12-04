@@ -4,7 +4,7 @@
 GET http://localhost:3000/products/
 
 ### GET ONLY ONE 
-GET http://localhost:3000/products/674e4b4df63c9c3ea101c271
+GET http://localhost:3000/products/674e4b4df63c9c3ea101c26a
 
 ### CREATE NEW PRODUCT
 POST http://localhost:3000/products/
