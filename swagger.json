@@ -5,16 +5,15 @@
     "description": "API for managing products and reviews",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-project2-5fyz.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "description": "Returns the API's root endpoint information",
         "responses": {
           "200": {
             "description": "OK"
@@ -24,13 +23,13 @@
     },
     "/products/": {
       "get": {
-        "description": "",
+        "description": "Fetch all available products",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Products retrieved successfully"
           },
           "500": {
             "description": "Internal Server Error"
@@ -38,7 +37,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new product",
         "parameters": [
           {
             "name": "body",
@@ -73,10 +72,10 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Product created successfully"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Invalid input data"
           },
           "500": {
             "description": "Internal Server Error"
@@ -86,7 +85,7 @@
     },
     "/products/{id}": {
       "get": {
-        "description": "",
+        "description": "Fetch a product by its ID",
         "produces": [
           "application/json"
         ],
@@ -100,13 +99,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Product retrieved successfully"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Invalid ID format"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Product not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -114,7 +113,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a product by its ID",
         "parameters": [
           {
             "name": "id",
@@ -155,13 +154,13 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Product updated successfully"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Invalid input data"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Product not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -169,7 +168,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a product by its ID",
         "parameters": [
           {
             "name": "id",
@@ -180,10 +179,10 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Product deleted successfully"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Product not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -193,7 +192,7 @@
     },
     "/reviews/product/{productId}": {
       "get": {
-        "description": "",
+        "description": "Fetch all reviews for a specific product",
         "produces": [
           "application/json"
         ],
@@ -207,7 +206,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Reviews retrieved successfully"
           },
           "500": {
             "description": "Internal Server Error"
@@ -217,7 +216,7 @@
     },
     "/reviews/{id}": {
       "get": {
-        "description": "",
+        "description": "Fetch a review by its ID",
         "produces": [
           "application/json"
         ],
@@ -231,13 +230,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Review retrieved successfully"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Invalid ID format"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Review not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -245,7 +244,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a review by its ID",
         "parameters": [
           {
             "name": "id",
@@ -271,13 +270,13 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Review updated successfully"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Invalid input data"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Review not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -285,7 +284,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a review by its ID",
         "parameters": [
           {
             "name": "id",
@@ -296,10 +295,10 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Review deleted successfully"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Review not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -309,7 +308,7 @@
     },
     "/reviews/": {
       "post": {
-        "description": "",
+        "description": "Create a new review",
         "parameters": [
           {
             "name": "body",
@@ -335,10 +334,10 @@
         ],
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Review created successfully"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Invalid input data"
           },
           "500": {
             "description": "Internal Server Error"

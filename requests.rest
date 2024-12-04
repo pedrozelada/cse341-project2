@@ -1,25 +1,24 @@
 
 
 ### GET ALL Products
-GET http://localhost:3000/products
+GET http://localhost:3000/products/
 
 ### GET ONLY ONE 
-GET http://localhost:3000/products/674e4b4df63c9c3ea101c26avb
+GET http://localhost:3000/products/674e4b4df63c9c3ea101c26c
 
 ### CREATE NEW PRODUCT
 POST http://localhost:3000/products/
 content-type: application/json
 
 {
-    "name": "",
+    "name": "aaaaa",
     "description": "Phone last Generation.",
     "category": "Electronics",
-    "price": -129.99,
-    "stockQuantity": -150,
+    "price": 129.99,
+    "stockQuantity": 150,
     "weight": 0.4,
     "isActive": true
 }
-
 
 ### UPDATE PRODUCT
 PUT http://localhost:3000/products/674e71029804e8ac3d4a72bf
@@ -35,48 +34,63 @@ content-type: application/json
     "isActive": true
 }
 
+### DELETE PRODUCT
+DELETE http://localhost:3000/products/674fd22b34050a3423ed1e93
 
 
-### DELETE Product
-DELETE http://localhost:3000/products/674e71029804e8ac3d4a72bf
 
-### DELETE Reviews by product
+
+### GET ALL REVIEWS FOR A SPECIFIC PRODUCT
 GET http://localhost:3000/reviews/product/674e4b4df63c9c3ea101c26a
 
 
+### GET REVIEW BY ID
+GET http://localhost:3000/reviews/674f2b24f63c9c3ea101cc2e
 
 
-
-### GET ALL CONTACTS ON RENDER
-GET https://project1-et34.onrender.com/users
-
-
-### GET ONLY ONE ON RENDER
-GET https://project1-et34.onrender.com/users/673698ffca2d411bf1c69aa9
-
-
-
-### CREATE NEW CONTACT ON RENDER
-POST https://project1-et34.onrender.com/users/
+###  CREATE A NEW REVIEW
+POST http://localhost:3000/reviews/
 content-type: application/json
 
 {
-    "firstName": "Joaquin",
-    "lastName": "Tapia",
-    "email": "joaco@yahoo.com",
-    "favoriteColor": "black",
-    "birthday": "1999-05-14"
+  "userId": "user43",
+  "productId": "674e4b4df63c9c3ea101c26a",
+  "rating": 5,
+  "reviewText": "Fantastic",
+  "createdAt": "2024-12-03T12:00:00Z"
 }
 
-
-### UPDATE CONTACT ON RENDER
-PUT https://project1-et34.onrender.com/users/673940265c30bd12c1fe7300
+### UPDATE REVIEW
+PUT http://localhost:3000/reviews/674fd00634050a3423ed1e91
 content-type: application/json
 
 {
-   "firstName": "Joaquin3",
-    "lastName": "Tapia3",
-    "email": "joaco3@yahoo.com",
-    "favoriteColor": "black",
-    "birthday": "1999-05-14"
+  "userId": "user459",
+  "productId": "674e4b4df63c9c3ea101c26a",
+  "rating": 4,
+  "reviewText": "Fantastic2",
+  "createdAt": "2024-12-03T12:00:00Z"
+}
+
+### DELETE REVIEW
+DELETE http://localhost:3000/reviews/674fd1e134050a3423ed1e92
+
+
+
+
+### GET ALL Products ON RENDER
+GET https://cse341-project2-5fyz.onrender.com/products/
+
+### CREATE NEW PRODUCT
+POST https://cse341-project2-5fyz.onrender.com/products/
+content-type: application/json
+
+{
+    "name": "aaaaa",
+    "description": "Phone last Generation.",
+    "category": "Electronics",
+    "price": 129.99,
+    "stockQuantity": 150,
+    "weight": 0.4,
+    "isActive": true
 }

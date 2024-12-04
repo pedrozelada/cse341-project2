@@ -18,7 +18,7 @@ const getAllReviews = async (req, res) => {
 const getReviewById = async (req, res) => {
     const reviewId = new ObjectId(req.params.id);
 
-    if (!ObjectId.isValid(productId)) {
+    if (!ObjectId.isValid(reviewId)) {
         return res.status(400).json({ error: 'Invalid product ID format' });
     }
     
