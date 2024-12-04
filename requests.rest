@@ -4,7 +4,7 @@
 GET http://localhost:3000/products/
 
 ### GET ONLY ONE 
-GET http://localhost:3000/products/674e4b4df63c9c3ea101c26c
+GET http://localhost:3000/products/674e4b4df63c9c3ea101c271
 
 ### CREATE NEW PRODUCT
 POST http://localhost:3000/products/
@@ -81,7 +81,7 @@ DELETE http://localhost:3000/reviews/674fd1e134050a3423ed1e92
 ### GET ALL Products ON RENDER
 GET https://cse341-project2-5fyz.onrender.com/products/
 
-### CREATE NEW PRODUCT
+### CREATE NEW PRODUCT ON RENDER
 POST https://cse341-project2-5fyz.onrender.com/products/
 content-type: application/json
 
@@ -93,4 +93,25 @@ content-type: application/json
     "stockQuantity": 150,
     "weight": 0.4,
     "isActive": true
+}
+
+
+### GET ALL REVIEWS FOR A SPECIFIC PRODUCT ON RENDER
+GET https://cse341-project2-5fyz.onrender.com/reviews/product/674e4b4df63c9c3ea101c26a
+
+
+### GET REVIEW BY ID ON RENDER
+GET https://cse341-project2-5fyz.onrender.com/674f2b24f63c9c3ea101cc2e
+
+
+###  CREATE A NEW REVIEW ON RENDER
+POST https://cse341-project2-5fyz.onrender.com/reviews/
+content-type: application/json
+
+{
+  "userId": "user43",
+  "productId": "674e4b4df63c9c3ea101c26a",
+  "rating": 5,
+  "reviewText": "Fantastic",
+  "createdAt": "2024-12-03T12:00:00Z"
 }
