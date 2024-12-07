@@ -4,24 +4,24 @@
 GET http://localhost:3000/products/
 
 ### GET ONLY ONE 
-GET http://localhost:3000/products/674e4b4df63c9c3ea101c26a
+GET http://localhost:3000/products/674fdca551bb01cd18b782ab
 
 ### CREATE NEW PRODUCT
 POST http://localhost:3000/products/
 content-type: application/json
 
 {
-    "name": "aaaaa",
+    "name": "Phone",
     "description": "Phone last Generation.",
     "category": "Electronics",
-    "price": 129.99,
-    "stockQuantity": 150,
-    "weight": 0.4,
+    "price": -129.99,
+    "stockQuantity": 100,
+    "weight": 10,
     "isActive": true
 }
 
 ### UPDATE PRODUCT
-PUT http://localhost:3000/products/674e71029804e8ac3d4a72bf
+PUT http://localhost:3000/products/674fdca551bb01cd18b782ab
 content-type: application/json
 
 {
@@ -35,7 +35,7 @@ content-type: application/json
 }
 
 ### DELETE PRODUCT
-DELETE http://localhost:3000/products/674fd22b34050a3423ed1e93
+DELETE http://localhost:3000/products/674fd31773d1817d7793c639
 
 
 
